@@ -45,7 +45,7 @@ public class DepartmentListController implements Initializable {
 	private ObservableList<Department> obsList;
 	
 	@FXML
-	public void onBtnewAction(ActionEvent event) {
+	public void onBtNewAction(ActionEvent event) {
 		Stage parentStage = Utils.currentStage(event);
 		Department obj = new Department();
 		createDialogForm(obj ,"/gui/DepartmentForm.fxml", parentStage);
@@ -85,6 +85,7 @@ public class DepartmentListController implements Initializable {
 			
 			DepartmentFormController controller = loader.getController();// controlador da tela
 			controller.setDepartment(obj);
+			controller.setDepartment(new DepartmentService());
 			controller.updateFormData();
 			
 			// pra colocar um janela emcima da outra tem que instanciar um novo stage;
